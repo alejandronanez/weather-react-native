@@ -4,6 +4,7 @@ import React, {
     View,
     StyleSheet
 } from 'react-native';
+import Api from './src/api';
 
 const Weather = React.createClass({
     getInitialState() {
@@ -11,12 +12,19 @@ const Weather = React.createClass({
             pin: {
                 longitude: 0,
                 latitude: 0
-            }
+            },
+            city: '',
+            temperature: '',
+            description: ''
         }
     },
     onRegionChangeComplete({longitude, latitude}) {
         const pin = {longitude, latitude};
         this.setState({pin});
+
+        Api(pin).then((data) => {
+            this.setState(data);
+        });
     },
     render() {
         return (
