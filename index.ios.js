@@ -8,18 +8,21 @@ import React, {
 const Weather = React.createClass({
     getInitialState() {
         return {
-            pins: []
+            pin: {
+                longitude: 0,
+                latitude: 0
+            }
         }
     },
     onRegionChangeComplete({longitude, latitude}) {
-        const pins = this.state.pins.concat({longitude, latitude});
-        this.setState({pins});
+        const pin = {longitude, latitude};
+        this.setState({pin});
     },
     render() {
         return (
             <MapView
                 style={styles.map}
-                annotations={this.state.pins}
+                annotations={[this.state.pin]}
                 onRegionChangeComplete={this.onRegionChangeComplete}>
             </MapView>
         );
