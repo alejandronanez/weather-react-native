@@ -2,7 +2,7 @@ weather-react-native
 ====
 Weather application using React Native + Open Weather Map API.
 
-![Weather](https://raw.githubusercontent.com/alejandronanez/weather/master/weather.gif)
+![Weather](https://raw.githubusercontent.com/alejandronanez/weather-react-native/master/weather.gif)
 
 ### Installation
 1. `npm install`
